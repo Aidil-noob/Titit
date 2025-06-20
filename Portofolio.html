@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selamat Datang di Resume Milik Saya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    body {
+    background: #0d0d0d;
+    color: #fff;
+    scroll-behavior: smooth;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5);
+      box-shadow: 0 0 20px #000;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+    }
+    
+    section {
+      padding: 60px 20px;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .portfolio-item {
+      background: #1a1a1a;
+      margin: 10px auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+      cursor: pointer;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    
+    .portfolio-item:hover {
+      transform: scale(1.03);
+      background: #2a2a2a;
+    }
+    
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 20px;
+    }
+    
+    .skills img {
+      height: 40px;
+      transition: transform 0.3s;
+    }
+    
+    .skills img:hover {
+      transform: scale(1.2);
+    }
+    
+    .contact-form {
+      width: 80%;
+      margin: 0 auto;
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background: #0d0d0d;
+      border: 1px solid #555;
+      color: white;
+      border-radius: 5px;
+    }
+    
+    .contact-form button {
+      padding: 10px 20px;
+      background: linear-gradient(to right, #ff6ec4, #7873f5);
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .pill-radio-container {
+      --main-color: #ff6ec4;
+      --secondary-color: #7873f5;
+      --text-color: #ddd;
+      --pill-bg: #1a1a1a;
+      --total-options: 3;
+    
+      display: flex;
+      position: relative;
+      background: var(--pill-bg);
+      border-radius: 3rem;
+      padding: 0.5rem;
+      gap: 1rem;
+      margin: 20px auto;
+      box-shadow: 0 0 20px #000 inset;
+      width: fit-content;
+    }
+    
+    .pill-radio-container input {
+      display: none;
+    }
+    
+    .pill-radio-container label {
+      position: relative;
+      padding: 0.6rem 1.5rem;
+      border-radius: 3rem;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--text-color);
+      transition: color 0.3s ease-in-out;
+      z-index: 2;
+    }
+    
+    .pill-radio-container input:checked + label {
+      color: #fff;
+    }
+    
+    .pill-radio-container label:hover {
+      color: var(--main-color);
+    }
+    
+    .pill-indicator {
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      height: 4px;
+      width: calc(100% / var(--total-options));
+      background: linear-gradient(to right, var(--main-color), var(--secondary-color));
+      border-radius: 2px;
+      transition: transform 0.3s ease-in-out;
+      z-index: 1;
+    }
+    
+    #pill-free:checked ~ .pill-indicator {
+      transform: translateX(0%);
+    }
+    
+    #pill-basic:checked ~ .pill-indicator {
+      transform: translateX(100%);
+    }
+    
+    #pill-premium:checked ~ .pill-indicator {
+      transform: translateX(200%);
+    }
+    
+    img {
+      width: 100%; /* Gambar akan mengisi 100% lebar elemen induknya */
+      height: auto; /* Mempertahankan rasio aspek */
+    }
+
+  </style>
+  </head>
+  <body>
+    <header>
+      <h1>Selamat Datang di Resume Saya🗿</h1>
+    </header>  
+    <section>
+      <div class="pill-radio-container">
+        <input checked name="plan" id="pill-free" type="radio" onclick="scrollToSection('about')" />
+        <label for="pill-free">About Me</label><input name="plan" id="pill-basic" type="radio" onclick="scrollToSection('contact')" />
+        <label for="pill-basic">Contact</label>
+  
+        <input name="plan" id="pill-premium" type="radio" onclick="scrollToSection('waifu')" />
+        <label for="pill-premium">Waifu</label>
+  
+        <div class="pill-indicator"></div>
+      </div>
+  
+    </section> 
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Halo! Gue adalah pelajar SMK yang semangat di dunia coding & desain web.</p>
+      <div class="skills">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      </div>
+    </section>  
+    <section id="portfolio">
+      <h2>Portofolio</h2>
+      <div class="portfolio-item">Aplikasi To-Do List berbasis Web</div>
+      <div class="portfolio-item">Desain UI Landing Page Sekolah</div>
+      <div class="portfolio-item">Proyek Enkripsi Pesan Sederhana</div>
+    </section>  
+    <section id="contact">
+      <h2>Hubungi Saya</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Nama" required>
+        <input type="email" placeholder="Email" required>
+        <textarea rows="5" placeholder="Pesan" required></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </section> 
+    <section id="waifu">
+      <h2>My Waifu</h2>
+      <p>Hanaoka Yuzu from Millennium Science School</p>
+      <img src="yuzu.webp" >
+    </section>  
+    <script>
+      function scrollToSection(id) {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    </script>
+  </body>
+</html>
